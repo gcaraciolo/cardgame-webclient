@@ -9,7 +9,8 @@
                 <div class="row">
                     <div class="col-md-2 mesa">
                         <div id="carta" class="marrom">
-                            <p>DECK</p>
+                            <img src="img/deck.png"/>
+                            <!-- <p>DECK</p> -->
                         </div>
                     </div>
                     <div class="col-md-10 mesa">
@@ -27,12 +28,18 @@
                 <!-- personagens e decoracao -->
                 <div class="row" id="header">
                     <div class="col-md-6">
-                        <div id="carta"  class="marrom-escuro">
-                            <p>PERSONAGEM</p>
-                            <p>Ataque: {{ player2.character.attack }}</p>
-                            <p>Defesa: {{ player2.character.defense }}</p>
-                            <p>Vida: {{ player2.character.life }}</p>
+                      <div id="carta"  class="marrom-escuro magician">
+                        <div class="character-labels">
+                          <div class="name">
+                            <p>Magician</p>
+                          </div>
+                          <div class="powers">
+                            <label>{{ player2.character.attack }}</label>
+                            <label>{{ player2.character.defense }}</label>
+                            <label>{{ player2.character.life }}</label>
+                          </div>
                         </div>
+                      </div>                        
                     </div>
                     <div class="col-md-6">
                         <div id="carta"  class="marrom-escuro" ng-class="{geography: player2.cardsInGame[0].subject.name == 'Geography' , history: player2.cardsInGame[0].subject.name == 'History', math: player2.cardsInGame[0].subject.name == 'Math', portuguese: player2.cardsInGame[0].subject.name == 'Portuguese', science: player2.cardsInGame[0].subject.name == 'Science'}">
@@ -72,11 +79,17 @@
 
                   <div class="row" id="header">
                       <div class="col-md-6">
-                          <div id="carta"  class="marrom-escuro">
-                              <p>PERSONAGEM</p>
-                              <p>Ataque: {{ player1.character.attack }}</p>
-                              <p>Defesa: {{ player1.character.defense }}</p>
-                              <p>Vida: {{ player1.character.life }}</p>
+                          <div id="carta"  class="marrom-escuro gladiator">
+                            <div class="character-labels">
+                              <div class="name">
+                                <p>Gladiator</p>
+                              </div>
+                              <div class="powers">
+                                <label>{{ player1.character.attack }}</label>
+                                <label>{{ player1.character.defense }}</label>
+                                <label>{{ player1.character.life }}</label>
+                              </div>
+                            </div>
                           </div>
                       </div>
 
@@ -100,14 +113,15 @@
                   <div class="row">
                       <div class="col-md-2 mesa">
                           <div id="carta" class="marrom">
-                              <p>DECK</p>
+                              <img src="img/deck.png"/>
+                              <!-- <p>DECK</p> -->
                           </div>
                       </div>
                       <div class="col-md-10 mesa">
 
                           <div class="row">
                             <div ng-repeat="card in player1.availableCards">
-                                <div class="grid-carta-mesa" ng-click="move(player1.username, $index)">
+                                <div class="grid-carta-mesa" ng-click="move(player1.username, $index); alert('opa')">
                                     <div id="carta" class="marrom-claro " ng-class="{geography: card.subject.name == 'Geography' , history: card.subject.name == 'History', math: card.subject.name == 'Math', portuguese: card.subject.name == 'Portuguese', science: card.subject.name == 'Science'}">
                                         <!-- <img src="img/cardGeography.png" /> -->
                                         <!-- <p>{{ card.subject.name }}</p> -->

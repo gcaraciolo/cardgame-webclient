@@ -32,6 +32,9 @@
           if(err.status == 401){
             alert("Login Invalido");
           }
+          else{
+            alert("Alguma coisa deu errado")
+          }
         })
 
         // $http.post('http://cardgame-gcaraciolo.rhcloud.com/api/join', params)
