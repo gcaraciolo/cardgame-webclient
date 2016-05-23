@@ -6,9 +6,9 @@ const express  = require('express'),
     bodyParser = require('body-parser'),
     app      = express()
 
-const port = 5000
+const port = 3000
 
-app.use('/cardgame', express.static(__dirname));
+app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
