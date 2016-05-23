@@ -6,7 +6,7 @@
 
     JoinController.$inject = ['$scope', '$http', '$location', '$rootScope', '$localStorage', 'dataService'];
     function JoinController($scope, $http, $location, $rootScope, $localStorage, dataService) {
-      
+
       if(typeof $localStorage.token != 'undefined' ){
         dataService.setData($localStorage.token);
         $location.path('/dashboard');
@@ -29,7 +29,9 @@
           $location.path('/dashboard');
         })
         .catch(function(err) {
-          console.log(err)
+          if(err.status == 401){
+            alert("Login Invalido");
+          }
         })
 
         // $http.post('http://cardgame-gcaraciolo.rhcloud.com/api/join', params)
